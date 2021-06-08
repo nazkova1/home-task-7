@@ -1,39 +1,42 @@
 // 1. задача
-// let person = {}
-// person.firstName = 'Ivan';
-// person.secondName = 'Ivanov';
+const person = {}
+person.firstName = 'Ivan';
+person.secondName = 'Ivanov';
 
-// const showData = function() {
-//     console.log(firstName, secondName);
-// }
+person.showData = function() {
+    console.log(this.firstName + ' ' + this.secondName);
+}
 
-// let newPerson = Object.assign({}, person);
+const newPerson = Object.assign({}, person);
 
-// newPerson.firstName = 'Petro';
-// newPerson.secondName = 'Petriv';
+newPerson.firstName = 'Petro';
+newPerson.secondName = 'Petriv';
 
-// person.showData();
-// newPerson.showData();
+person.showData();
+newPerson.showData();
 
 // 2.
+const sum = function () {
+    console.log(this.a + this.b)
+}
+const multiplication = function () {
+    console.log(this.a * this.b)
+}
+const division = function () {
+    console.log(this.a / this.b)
+}
+const subtraction = function () {
+    console.log(this.a - this.b)
+}
 const MyMath = {}
 MyMath.a = 5;
 MyMath.b = 2;
+MyMath.sum = sum;
+MyMath.multiplication = multiplication;
+MyMath.division = division;
+MyMath.subtraction = subtraction;
 
-const sum = function () {
-    console.log(MyMath.a + MyMath.b)
-}
-const multiplication = function () {
-    console.log(MyMath.a * MyMath.b)
-}
-const division = function () {
-    console.log(MyMath.a / MyMath.b)
-}
-const subtraction = function () {
-    console.log(MyMath.a - MyMath.b)
-}
-// MyMath.
-sum();
-multiplication();
-division();
-subtraction();
+MyMath.sum();
+MyMath.multiplication();
+MyMath.division();
+MyMath.subtraction();
